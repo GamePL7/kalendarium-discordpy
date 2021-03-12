@@ -18,9 +18,8 @@ jsonLink = "https://pniedzwiedzinski.github.io/kalendarz-swiat-nietypowych/" + d
     "%#m") + "/" + date.today().strftime("%#d") + ".json"
 req = requests.get(url=jsonLink)
 odp = (
-    "tak", "nie", "wydaje mi się, że tak", "wydaje mi się, że nie", "zwykle nie", "zwykle tak", "czy ty jesteś głupi?",
-    "świetny pomysł!", "oczywiście, że nie", "oczywiście, że tak", "może", "nie wiem",
-    "to jest bardziej oczywiste niż to że jestes gejuchem", "no chyba głowa cię boli")
+    "tak", "nie", "wydaje mi się, że tak", "wydaje mi się, że nie", "zwykle nie", "zwykle tak",
+    "świetny pomysł!", "oczywiście, że nie", "oczywiście, że tak", "może", "nie wiem")
 
 
 @client.event
