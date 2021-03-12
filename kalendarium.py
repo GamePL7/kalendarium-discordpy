@@ -64,7 +64,7 @@ async def on_command_error(ctx, error):
         helpmsg.add_field(name=">>autor", value="Pokazuje autora bota", inline=False)
         helpmsg.add_field(name=">>8ball <pytanie>", value="Losuje odpowiedź w stylu TAK/NIE", inline=False)
         helpmsg.add_field(name=">>ile <pytanie>", value="Losuje liczbę 0-20", inline=False)
-        helpmsg.add_field(name=">>howgay <osoba>", value="Test na bycie gejem (0-100%)", inline=False)
+        helpmsg.add_field(name=">>howgay <osoba>", value="Test na bycie gejem (0-100%)", inline=False) # proszę o branie tego z dystansem :)
         await ctx.send(embed=helpmsg)
     else:
         await ctx.send("Wystąpił błąd podczas działania bota, zgłoś to do autora: <@" + botAuthorID + ">")
@@ -73,7 +73,6 @@ async def on_command_error(ctx, error):
 
 @client.command(aliases=['8ball'])
 async def _8ball(ctx, *, args):
-    # pyt1 = (' '.join(args))
     odp1 = random.choice(odp)
     pyt1 = args
     embed = discord.Embed(
@@ -83,7 +82,6 @@ async def _8ball(ctx, *, args):
     embed.set_footer(text="Kalendarium " + botVersion + " by " + botAuthorName)
     embed.add_field(name="Pytanie od " + str(ctx.message.author), value=pyt1, inline=False)
     embed.add_field(name="Odpowiedź:", value=odp1, inline=False)
-    # await client.delete_message(ctx.message)
     await ctx.message.delete()
     await ctx.send(embed=embed)
 
